@@ -9,5 +9,6 @@ window.getCookie = function(name) {
 if (!getCookie(cookieName)) {
 	var expiration = (new Date()).getTime() + 31;
 	document.cookie = cookieName +'='+ cookieValue +'; expires='+ expiration+'; path=/';
-	document.getElementById('prehome-modal').innerHTML = '';
+	var modal = document.getElementById('prehome-modal');
+	modal.parentNode.removeChild(modal);
 }
